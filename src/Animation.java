@@ -6,31 +6,31 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 public class Animation {
-	private ArrayList<Image> leftUnderNeutral	= new ArrayList<Image>();
-	private ArrayList<Image> leftUnderAbove 	= new ArrayList<Image>();
-	private ArrayList<Image> leftAboveNeutral 	= new ArrayList<Image>();
-	private ArrayList<Image> leftAboveUnder 	= new ArrayList<Image>();
-	private ArrayList<Image> leftNeutralUnder 	= new ArrayList<Image>();
-	private ArrayList<Image> leftNeutralAbove 	= new ArrayList<Image>();
-	private ArrayList<Image> leftAboveAttack 	= new ArrayList<Image>();
-	private ArrayList<Image> leftAboveBlock 	= new ArrayList<Image>();
-	private ArrayList<Image> leftNeutralAttack 	= new ArrayList<Image>();
-	private ArrayList<Image> leftNeutralBlock 	= new ArrayList<Image>();
-	private ArrayList<Image> leftUnderBlock 	= new ArrayList<Image>();
-	private ArrayList<Image> leftUnderAttack 	= new ArrayList<Image>();
+	public static ArrayList<Image> leftUnderNeutral	= new ArrayList<Image>();
+	public static ArrayList<Image> leftUnderAbove 	= new ArrayList<Image>();
+	public static ArrayList<Image> leftAboveNeutral 	= new ArrayList<Image>();
+	public static ArrayList<Image> leftAboveUnder 	= new ArrayList<Image>();
+	public static ArrayList<Image> leftNeutralUnder 	= new ArrayList<Image>();
+	public static ArrayList<Image> leftNeutralAbove 	= new ArrayList<Image>();
+	public static ArrayList<Image> leftAboveAttack 	= new ArrayList<Image>();
+	public static ArrayList<Image> leftAboveBlock 	= new ArrayList<Image>();
+	public static ArrayList<Image> leftNeutralAttack 	= new ArrayList<Image>();
+	public static ArrayList<Image> leftNeutralBlock 	= new ArrayList<Image>();
+	public static ArrayList<Image> leftUnderBlock 	= new ArrayList<Image>();
+	public static ArrayList<Image> leftUnderAttack 	= new ArrayList<Image>();
 	
-	private ArrayList<Image> rightUnderNeutral	= new ArrayList<Image>();
-	private ArrayList<Image> rightUnderAbove 	= new ArrayList<Image>();
-	private ArrayList<Image> rightAboveNeutral 	= new ArrayList<Image>();
-	private ArrayList<Image> rightAboveUnder 	= new ArrayList<Image>();
-	private ArrayList<Image> rightNeutralUnder 	= new ArrayList<Image>();
-	private ArrayList<Image> rightNeutralAbove 	= new ArrayList<Image>();
-	private ArrayList<Image> rightAboveAttack 	= new ArrayList<Image>();
-	private ArrayList<Image> rightAboveBlock 	= new ArrayList<Image>();
-	private ArrayList<Image> rightNeutralAttack = new ArrayList<Image>();
-	private ArrayList<Image> rightNeutralBlock 	= new ArrayList<Image>();
-	private ArrayList<Image> rightUnderBlock 	= new ArrayList<Image>();
-	private ArrayList<Image> rightUnderAttack 	= new ArrayList<Image>();
+	public static ArrayList<Image> rightUnderNeutral	= new ArrayList<Image>();
+	public static ArrayList<Image> rightUnderAbove 	= new ArrayList<Image>();
+	public static ArrayList<Image> rightAboveNeutral 	= new ArrayList<Image>();
+	public static ArrayList<Image> rightAboveUnder 	= new ArrayList<Image>();
+	public static ArrayList<Image> rightNeutralUnder 	= new ArrayList<Image>();
+	public static ArrayList<Image> rightNeutralAbove 	= new ArrayList<Image>();
+	public static ArrayList<Image> rightAboveAttack 	= new ArrayList<Image>();
+	public static ArrayList<Image> rightAboveBlock 	= new ArrayList<Image>();
+	public static ArrayList<Image> rightNeutralAttack = new ArrayList<Image>();
+	public static ArrayList<Image> rightNeutralBlock 	= new ArrayList<Image>();
+	public static ArrayList<Image> rightUnderBlock 	= new ArrayList<Image>();
+	public static ArrayList<Image> rightUnderAttack 	= new ArrayList<Image>();
 	
 	public Animation ()
 	{
