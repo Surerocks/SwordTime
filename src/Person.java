@@ -10,10 +10,8 @@ public class Person {
 		this.stance = stance;
 	}
 	
-	public boolean isValidMove(Move m){
-		// TODO Determine if move is valid
-		
-		return true;
-	}
+
+	
+	
 	
 }
