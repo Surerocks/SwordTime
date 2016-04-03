@@ -5,7 +5,12 @@ public class Board {
 	private Person rightPerson;
 	private Person[] board;
 
-	
+	public Board(Person p1, Person p2)
+	{
+		leftPerson = p1;
+		rightPerson = p2;
+		board = new Person[] {null, null, leftPerson, null, null, rightPerson, null, null};
+	}
 	public boolean checkAdjacent(){
 		return (getLeftPosition() + 1 == getRightPosition());
 	}

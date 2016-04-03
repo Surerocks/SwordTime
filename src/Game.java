@@ -10,6 +10,16 @@ public class Game {
 	private boolean gameOver;
 	private Person winner;
 	
+	public Game()
+	{
+		leftPlayer = new Person(Stance.NEUTRAL);
+		rightPlayer = new Person(Stance.NEUTRAL);
+		board = new Board(leftPlayer, rightPlayer);
+		attacking = false;
+		gameOver = false;
+		winner = null;
+	}
+	
 	public List<Action> generateAllActions(Person person){
 		ArrayList<Action> actions = new ArrayList<Action>();
 		Action[] allValues = Action.values();
