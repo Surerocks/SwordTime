@@ -5,6 +5,10 @@ public class Board {
 	private Person rightPerson;
 	private Person[] board;
 
+	
+	public boolean checkAdjacent(){
+		return (getLeftPosition() + 1 == getRightPosition());
+	}
 
 	public int getLeftPosition(){
 		for(int i = 0; i < board.length; i++){

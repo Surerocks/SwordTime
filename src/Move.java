@@ -11,4 +11,11 @@ public class Move {
 		this.person = person;
 	}
 	
+	public Person getPerson(){
+		return person;
+	}
+	
+	public Action[] getActions(){
+		return actions;
+	}
 }
