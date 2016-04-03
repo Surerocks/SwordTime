@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
-public class Game {
+public class Game extends Observable{
 	
 	private Person leftPlayer;
 	private Person rightPlayer;
@@ -12,12 +13,32 @@ public class Game {
 	
 	public Game()
 	{
-		leftPlayer = new Person(Stance.NEUTRAL);
-		rightPlayer = new Person(Stance.NEUTRAL);
+		leftPlayer = new Person(Stance.NEUTRAL, Animation.leftNeutralAttack.get(0));
+		rightPlayer = new Person(Stance.NEUTRAL, Animation.rightNeutralAttack.get(0));
 		board = new Board(leftPlayer, rightPlayer);
 		attacking = false;
 		gameOver = false;
 		winner = null;
+	}
+	
+	public Person getLeftPlayer(){
+		return leftPlayer;
+	}
+	
+	public Person getRightPlayer(){
+		return rightPlayer;
+	}
+	
+	public boolean isLeftPlayer(Person person){
+		return (person == leftPlayer);
+	}
+	
+	public boolean isRightPlayer(Person person){
+		return (person == rightPlayer);
+	}
+	
+	public Board getBoard(){
+		return board;
 	}
 	
 	public List<Action> generateAllActions(Person person){
@@ -102,11 +123,20 @@ public class Game {
 				executeAction(a2[i],p2);
 				executeAction(a1[i],p1);
 			}
+			System.out.println("Stances: " + p1.getStance() + " " + p2.getStance());
+
+			// TODO Play animations
+			this.setChanged();
+			this.notifyObservers(new ActionAnimationEvent(p1,a1[i]));
+			this.setChanged();
+			this.notifyObservers(new ActionAnimationEvent(p2,a2[i]));
 			// Resolve attacks / blocks
 			if(attacking){
 				resolveAttack(a1[i],a2[i],p1,p2);
 				if(gameOver){
 					// TODO Handle end of game
+					this.setChanged();
+					this.notifyObservers(new GameOverEvent(winner));
 				}
 			}
 			
@@ -130,39 +160,39 @@ public class Game {
 			if(board.checkAdjacent()){
 				attacking = true;
 			}
-			// TODO Play animation
 			person.setPreviousAction(Action.ATTACK);
 			person.setClear(false);
+			break;
 			
 		case BLOCK:
-			// TODO Play animation
 			person.setPreviousAction(Action.BLOCK);
 			person.setClear(false);
-			// TODO If block was successful, clear action
+			break;
 			
 		case MOVE_LEFT:
 			board.movePersonLeft(person);
-			// TODO Play animation
+			break;
 			
 		case MOVE_RIGHT:
 			board.movePersonRight(person);
-			// TODO Play animation
-			
+			break;
+
 		case WAIT:
+			break;
 			
 			
 		case ABOVE:
 			person.changeStance(Stance.ABOVE);
-			// TODO Play animation
-			
+			break;
+
 		case NEUTRAL:
 			person.changeStance(Stance.NEUTRAL);
-			// TODO Play animation
-			
+			break;
+
 		case UNDER:
 			person.changeStance(Stance.UNDER);
-			// TODO Play animation
-			
+			break;
+
 		}
 	}
 	

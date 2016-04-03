@@ -9,7 +9,9 @@ public class Board {
 	{
 		leftPerson = p1;
 		rightPerson = p2;
-		board = new Person[] {null, null, leftPerson, null, null, rightPerson, null, null};
+		board = new Person[8];
+		board[2] = p1;
+		board[5] = p2;
 	}
 	public boolean checkAdjacent(){
 		return (getLeftPosition() + 1 == getRightPosition());
@@ -66,16 +68,18 @@ public class Board {
 	 * @param person
 	 */
 	public void movePersonLeft(Person person){
-		board[getPosition(person) -1] = person;
-		board[getPosition(person)] = null;
+		int pos = getPosition(person);
+		board[pos -1] = person;
+		board[pos] = null;
 	}
 	/**
 	 * Must check valid move first
 	 * @param person
 	 */
 	public void movePersonRight(Person person){
-		board[getPosition(person) +1] = person;
-		board[getPosition(person)] = null;
+		int pos = getPosition(person);
+		board[pos +1] = person;
+		board[pos] = null;
 	}
 	
 }
